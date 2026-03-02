@@ -7,7 +7,7 @@ export const syncExpenses = async (db, reload) => {
   if (unsynced.length === 0) return;
 
   try {
-    await axios.post("http://YOUR_BACKEND_URL:5000/api/expenses/sync", {
+    await axios.post("https://js-account-sys-2dvk.onrender.com/api/expenses/sync", {
       expenses: unsynced
     });
 
