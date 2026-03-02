@@ -6,15 +6,6 @@ const pool = new Pool({
     rejectUnauthorized: false
   }
 });
-require('dotenv').config();
-
-const pool = new Pool({
-  user: process.env.DB_USER,
-    host: process.env.DB_HOST,
-      database: process.env.DB_NAME,
-        password: process.env.DB_PASSWORD,
-          port: process.env.DB_PORT,
-          });
 
 exports.syncExpenses = async (req, res) => {
   const { expenses } = req.body;
@@ -26,6 +17,7 @@ exports.syncExpenses = async (req, res) => {
         [exp.amount, exp.created_at]
       );
     }
+
     res.json({ message: 'Synced successfully' });
   } catch (err) {
     console.error(err);
