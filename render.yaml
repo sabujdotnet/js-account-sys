@@ -1,0 +1,49 @@
+# Render Deployment Configuration
+# Author: sabujdotnet
+# Website: https://sabujdotnet.github.io
+
+services:
+  # Backend API Service
+  - type: web
+    name: js-accounting-api
+    runtime: node
+    buildCommand: cd server && npm install
+    startCommand: cd server && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: DATABASE_URL
+        sync: false  # Set this in Render dashboard
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: CLIENT_URL
+        value: https://js-accounting.onrender.com
+      - key: GOOGLE_CLIENT_ID
+        sync: false  # Set this in Render dashboard
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false  # Set this in Render dashboard
+      - key: GOOGLE_REDIRECT_URI
+        value: https://js-accounting-api.onrender.com/api/backup/google/callback
+      - key: LOG_LEVEL
+        value: info
+    healthCheckPath: /health
+    autoDeploy: true
+
+  # Frontend Static Site
+  - type: static
+    name: js-accounting
+    runtime: static
+    buildCommand: cd client && npm install && npm run build
+    staticPublishPath: ./client/build
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://js-accounting-api.onrender.com
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    autoDeploy: true

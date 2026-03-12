@@ -1,0 +1,54 @@
+{
+  "name": "js-accounting-client",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.21.1",
+    "react-scripts": "5.0.1",
+    "axios": "^1.6.3",
+    "@tanstack/react-query": "^5.17.0",
+    "zustand": "^4.4.7",
+    "react-hook-form": "^7.49.2",
+    "react-hot-toast": "^2.4.1",
+    "recharts": "^2.10.3",
+    "date-fns": "^3.0.6",
+    "lucide-react": "^0.303.0",
+    "tailwindcss": "^3.4.0",
+    "clsx": "^2.0.0",
+    "react-dropzone": "^14.2.3",
+    "react-image-lightbox": "^5.1.4",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.8.1",
+    "xlsx": "^0.18.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32"
+  },
+  "proxy": "http://localhost:3001"
+}
