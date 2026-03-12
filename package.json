@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "J&S Accounting BD - Production Ready Construction Management System",
   "author": "sabujdotnet",
-  "homepage": "https://sabujdotnet.github.io",
-  "scripts": {
+  "homepage": "https://sabujdotnet.github.io",  "scripts": {
     "install:all": "npm install && cd server && npm install && cd ../client && npm install",
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "dev:server": "cd server && npm run dev",
