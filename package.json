@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "J&S Accounting BD - Production Ready Construction Management System",
   "author": "sabujdotnet",
-  "homepage": "https://sabujdotnet.github.io",  "scripts": {
+  "homepage": "https://sabujdotnet.github.io",
+  "scripts": {
     "install:all": "npm install && cd server && npm install && cd ../client && npm install",
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "dev:server": "cd server && npm run dev",
     "dev:client": "cd client && npm start",
-    "build": "cd client && npm run build",
+    "build": "cd client && npm install && npm run build",
     "start": "cd server && npm start",
     "migrate": "cd server && npm run migrate",
     "seed": "cd server && npm run seed",
@@ -18,7 +19,7 @@
     "concurrently": "^8.2.2"
   },
   "engines": {
-  "node": ">=20.0.0 <23.0.0"
+    "node": ">=20.0.0 <23.0.0"
   },
   "repository": {
     "type": "git",
@@ -32,8 +33,5 @@
     "react",
     "nodejs"
   ],
-  "license": "GPL-3.0",
-  "scripts": {
-    "build": "cd client && npm install && npm run build"
-},
+  "license": "GPL-3.0"
 }
