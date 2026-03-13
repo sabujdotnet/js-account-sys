@@ -18,7 +18,7 @@
     "concurrently": "^8.2.2"
   },
   "engines": {
-    "node": ">=18.0.0"
+  "node": "18.x"
   },
   "repository": {
     "type": "git",
@@ -33,4 +33,7 @@
     "nodejs"
   ],
   "license": "GPL-3.0"
+},
+"scripts": {
+  "build": "cd client && npm install && npm run build"
 }
