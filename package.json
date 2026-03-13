@@ -33,7 +33,7 @@
     "nodejs"
   ],
   "license": "GPL-3.0"
-},
+}
 "scripts": {
   "build": "cd client && npm install && npm run build"
 }
