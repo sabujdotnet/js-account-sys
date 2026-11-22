@@ -103,7 +103,6 @@ if (process.env.NODE_ENV === 'production') {
   app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../../client/build/index.html'));
   });
-}
 
 // Error handling middleware
 app.use((err, req, res, next) => {
@@ -140,11 +139,10 @@ async function startServer() {
       logger.info(`Server running on port ${PORT}`);
       logger.info(`Environment: ${process.env.NODE_ENV || 'development'}`);
     });
-  } catch (error) {
+   catch (error) {
     logger.error('Failed to start server:', error);
     process.exit(1);
   }
-}
 
 // Handle unhandled promise rejections
 process.on('unhandledRejection', (err) => {
